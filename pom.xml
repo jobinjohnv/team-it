@@ -11,18 +11,18 @@
 	<groupId>qa.one</groupId>
 	<artifactId>teamit</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packagin>pom</packagin>
+	<packaging>pom</packaging>
 	<name>teamit</name>
 	<description>Team It</description>
 
 	<properties>
 		<java.version>1.8</java.version>
+		<main.basedir>${project.basedir}</main.basedir>
 	</properties>
 	
 	<modules>
         <module>frontend</module>
         <module>backend</module>
     </modules>
-	
 	
 	</project>

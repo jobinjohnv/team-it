@@ -16,7 +16,7 @@ var login = new Vue({
 		  .then(function (response) {
 			    console.log(response);
 			    login.error = "";
-			    window.location.href = './welcome';
+			    window.location.href = './';
 			  })
 			  .catch(function (error) {
 			    if(error.response.status == '403'){
