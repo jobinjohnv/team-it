@@ -35,7 +35,7 @@
 							<goal>install-node-and-npm</goal>
 						</goals>
 						<configuration>
-							<nodeVersion>v11.8.0</nodeVersion>
+							<nodeVersion>v8.0.0</nodeVersion>
 						</configuration>
 					</execution>
 					<!-- Install all project dependencies -->
@@ -62,7 +62,7 @@
             			</configuration>
 					</execution>
 					<!-- Run Unit tests with Jest -->
-					<execution>
+					<!--<execution>
 					<id>npm run test:unit</id>
 					<goals>
 						<goal>npm</goal>
@@ -71,7 +71,7 @@
 					<configuration>
 						<arguments>run test:unit</arguments>
 					</configuration>
-					</execution>
+					</execution>-->
 					<!-- Run End2End tests with Nightwatch -->
 					<!--
 					<execution>
