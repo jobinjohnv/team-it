@@ -9,7 +9,7 @@ var login = new Vue({
   methods:{
 	  loginSubmit: function(){
 		  this.msg = "Loging in";
-		  axios.post('./api/v1/userLogin',{
+		  axios.post('./api/v1/userlogin',{
 			  username:this.username,
 			  password:this.password
 		  })

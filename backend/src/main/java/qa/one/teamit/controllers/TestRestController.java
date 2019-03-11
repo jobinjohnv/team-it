@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-public class TestController {
+public class TestRestController {
 	
 	@GetMapping("/test")
 	public String testApp()
 	{
-		return "Test OK";
+		return "{'appStatus' : 'up'}";
 	}
 }

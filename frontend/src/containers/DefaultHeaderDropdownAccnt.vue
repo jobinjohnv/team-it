@@ -4,11 +4,12 @@
       <img
         src="img/avatars/6.jpg"
         class="img-avatar"
-        alt="admin@bootstrapmaster.com" />
-    </template>\
+        :alt="user.username"/>
+    </template>
     <template slot="dropdown">
-      <b-dropdown-header tag="div" class="text-center"><strong>Account</strong></b-dropdown-header>
-      <b-dropdown-item><i class="fa fa-bell-o" /> Updates
+     
+      <b-dropdown-header tag="div" class="text-center"><strong>Hi {{user.firstName}}</strong></b-dropdown-header>
+      <b-dropdown-item><i class="fa fa-bell-o" /> Updates 
         <b-badge variant="info">{{ itemsCount }}</b-badge>
       </b-dropdown-item>
       <b-dropdown-item><i class="fa fa-envelope-o" /> Messages
@@ -42,13 +43,24 @@
 
 <script>
 import { HeaderDropdown as AppHeaderDropdown } from '@coreui/vue'
+import axios from 'axios';
 export default {
   name: 'DefaultHeaderDropdownAccnt',
   components: {
     AppHeaderDropdown
   },
   data: () => {
-    return { itemsCount: 42 }
+    return { itemsCount: 42,
+    user:null }
+  },
+  mounted(){
+    axios
+      .get('./api/v1/userinfo')
+      .then(response => (this.user = response.data))
+      .then(console.log(this.user))
+      .catch(function(error){
+        console.log(error);
+      })
   }
 }
 </script>

@@ -38,7 +38,7 @@ public class UserController {
 
         userService.save(userForm);
 
-        securityService.autoLogin(userForm.getUsername(), userForm.getConfirmpassword());
+        securityService.autologin(userForm.getUsername(), userForm.getConfirmpassword());
 
         return "redirect:/welcome";
     }
@@ -56,7 +56,6 @@ public class UserController {
 
     @GetMapping("/welcome")
     public String welcome(Model model) {
-    	System.out.println("Loged in user is "+securityService.findLoggedInUsername());
-        return securityService.findLoggedInUsername();
+        return securityService.getCurrentUsername();
     }
 }

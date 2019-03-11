@@ -17,7 +17,7 @@ import qa.one.teamit.service.SecurityService;
 
 @RestController
 @RequestMapping("/api")
-public class ProjectController {
+public class ProjectRestController {
 	
 	@Autowired
 	public ProjectService projectService;
@@ -25,19 +25,19 @@ public class ProjectController {
 	@Autowired
 	private SecurityService securityService;
 	
-	@GetMapping("/projects")
+	@GetMapping("/allprojects")
 	public List<Project> getAllProjects() {
 		return projectService.findAllProjects();
 	}
 	
-	@GetMapping("/myprojects")
+	@GetMapping("/projects")
 	public List<Project> getCurrentUserProjects(){
 		return projectService.findCurrentUserProjects(securityService.getUserProfile().getUsername());
 	}
 	
 	@PostMapping("/projects")
-	public void saveProject(@RequestBody Project project) {
-		projectService.save(project);
+	public Project saveProject(@RequestBody Project project) {
+		return projectService.save(project, securityService.getUser());
 	}
 	
 	@GetMapping("/projects/{Id}")

@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
@@ -23,6 +25,10 @@ public class Project {
 	private String createdBy;
 	private Date createdAt;
 	private Date modifiedAt;
+	
+	@ManyToOne
+	@JoinColumn(name = "userdata_id")
+	private User user;
 	
 
 	public Long getId() {
@@ -75,6 +81,14 @@ public class Project {
 
 	public Date getModifiedAt() {
 		return modifiedAt;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
     
     

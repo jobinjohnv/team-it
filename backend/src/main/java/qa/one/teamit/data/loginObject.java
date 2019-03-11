@@ -3,6 +3,7 @@ package qa.one.teamit.data;
 public class loginObject {
 	private String username;
 	private String password;
+	
 	public String getUsername() {
 		return username;
 	}

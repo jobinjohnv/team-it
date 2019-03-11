@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import qa.one.teamit.model.Project;
+import qa.one.teamit.model.User;
 import qa.one.teamit.repo.ProjectRepository;
 
 @Service
@@ -21,9 +22,10 @@ public class ProjectServiceImpl implements ProjectService{
 	
 
 	@Override
-	public void save(Project project) {
+	public Project save(Project project, User user) {
 		project.setCreatedBy(securityService.getCurrentUser());
-		projectRepository.save(project);
+		project.setUser(user);
+		return projectRepository.save(project);
 		
 	}
 

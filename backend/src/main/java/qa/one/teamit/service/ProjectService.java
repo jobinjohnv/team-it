@@ -5,11 +5,12 @@ import java.util.List;
 import java.util.Optional;
 
 import qa.one.teamit.model.Project;
+import qa.one.teamit.model.User;
 
 
 public interface ProjectService {
 	
-	void save(Project project);
+	Project save(Project project, User user);
 	
 	Optional<Project> findProjectById(Long Id);
 	

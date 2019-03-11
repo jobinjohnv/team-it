@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import qa.one.teamit.data.UserProfile;
+import qa.one.teamit.model.User;
 
 
 @Service
@@ -43,8 +44,18 @@ public class SecurityServiceImpl implements SecurityService {
 	}
 	
 
+
 	@Override
-	public String findLoggedInUsername() {
+	public User getUser() {
+		
+		return userService.findByUsername(getCurrentUser());
+	}
+	
+	
+	
+
+	@Override
+	public String getCurrentUsername() {
 		Object userDetails = SecurityContextHolder
 				.getContext()
 				.getAuthentication()
@@ -60,7 +71,7 @@ public class SecurityServiceImpl implements SecurityService {
 	
 
 	@Override
-	public String autoLogin(String username, String password) {
+	public String autologin(String username, String password) {
 		System.out.println("Username is "+username+"| Passord is"+password);
 		UserDetails userDetails = userDetailsSerice.loadUserByUsername(username);
 		
@@ -82,10 +93,8 @@ public class SecurityServiceImpl implements SecurityService {
 	@Override
 	public UserProfile getUserProfile() {
 		String username = getCurrentUser();
-		System.out.println("Username is "+userProfile);
 		userProfile.setUsername(username);
 		String firstName = userService.findByUsername(username).getFirstName();
-		System.out.println("Firstname is "+firstName);
 		userProfile.setFirstname(firstName);
 		return userProfile;
 	}
@@ -96,5 +105,8 @@ public class SecurityServiceImpl implements SecurityService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+
 
 }

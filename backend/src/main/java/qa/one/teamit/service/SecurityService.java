@@ -4,14 +4,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import qa.one.teamit.data.UserProfile;
+import qa.one.teamit.model.User;
 
 public interface SecurityService {
 	
-	String findLoggedInUsername();
+	String getCurrentUsername();
 	
-	String autoLogin(String username, String password);
+	String autologin(String username, String password);
 
 	String getCurrentUser();
+	
+	User getUser();
 	
 	UserProfile getUserProfile();
 

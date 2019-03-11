@@ -7,8 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="userrole")
 public class Role {
 	
 	@Id
@@ -16,8 +18,19 @@ public class Role {
 	private Long id;
 	private String name;
 	
-	@ManyToMany(mappedBy = "roles")
-	private Set<User> users;
+	
+	public Role() {}
+	
+
+	public Role(Long id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+
+	public Role(String name) {
+		this.name = name;
+	}
 
 	public Long getId() {
 		return id;
@@ -35,14 +48,6 @@ public class Role {
 		name = roleName;
 	}
 
-	public Set<User> getUsers() {
-		return users;
-	}
 
-	public void setUsers(Set<User> users) {
-		this.users = users;
-	}
-	
-	
 
 }
