@@ -1,10 +1,7 @@
 <template>
   <AppHeaderDropdown right no-caret>
     <template slot="header">
-      <img
-        src="img/avatars/6.jpg"
-        class="img-avatar"
-        :alt="user.username"/>
+        <button data-v-411e79bf="" type="button" class="btn btn-pill btn-primary btn-lg">{{user.firstName.charAt(0)}}</button>
     </template>
     <template slot="dropdown">
      
