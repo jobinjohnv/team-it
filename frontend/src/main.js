@@ -8,10 +8,12 @@ import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import App from './App'
 import router from './router'
+import Vuesax from 'vuesax'
+import 'vuesax/dist/vuesax.css'
 
 // todo
 // cssVars()
-
+Vue.use(Vuesax)
 Vue.use(BootstrapVue)
 
 /* eslint-disable no-new */

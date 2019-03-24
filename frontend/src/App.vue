@@ -23,4 +23,18 @@ export default {
   @import '~bootstrap-vue/dist/bootstrap-vue.css';
   // Import Main styles for this application
   @import 'assets/scss/style';
+
+  @import '~vuesax/dist/vuesax.css';
+
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+  
+#app {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #000000;
+}
 </style>

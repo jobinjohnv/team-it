@@ -1,16 +1,15 @@
 <template>
   <div class="app">
-    <AppHeader fixed>
+    <AppHeader fixed class="AppHeader">
       <SidebarToggler class="d-lg-none" display="md" mobile />
       <b-link class="navbar-brand" to="#">
-        <img class="navbar-brand-full" src="img/brand/logo.svg" width="89" height="25" alt="CoreUI Logo">
-        <img class="navbar-brand-minimized" src="img/brand/sygnet.svg" width="30" height="30" alt="CoreUI Logo">
+        <img class="navbar-brand-full" src="img/brand/logo2.svg" width="89" height="25" alt="Team IT">
       </b-link>
       <SidebarToggler class="d-md-down-none" display="lg" />
       <b-navbar-nav class="d-md-down-none">
         <b-nav-item class="px-3" to="/dashboard">Dashboard</b-nav-item>
         <b-nav-item class="px-3" to="/users" exact>Users</b-nav-item>
-        <b-nav-item class="px-3">Settings</b-nav-item>
+        <b-nav-item class="px-3">Admin</b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
         <b-nav-item class="d-md-down-none">
@@ -34,7 +33,7 @@
         <SidebarForm/>
         <SidebarNav :navItems="nav"></SidebarNav>
         <SidebarFooter/>
-        <SidebarMinimizer/>
+       
       </AppSidebar>
       <main class="main">
         <Breadcrumb :list="list"/>
@@ -49,13 +48,9 @@
     </div>
     <TheFooter>
       <!--footer-->
-      <div>
-        <a href="https://coreui.io">CoreUI</a>
-        <span class="ml-1">&copy; 2018 creativeLabs.</span>
-      </div>
       <div class="ml-auto">
-        <span class="mr-1">Powered by</span>
-        <a href="https://coreui.io">CoreUI for Vue</a>
+        <a href="https://google.com/">Team IT</a>
+        <span class="ml-1">&copy; 2018 JeyBN</span>
       </div>
     </TheFooter>
   </div>
@@ -100,3 +95,64 @@ export default {
   }
 }
 </script>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.body{
+  background-color: #ffffff
+}
+.app {
+  font-family: 'Montserrat', sans-serif;
+  font-style: bold;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: left;
+  color: #000000;
+  background-color: #ffffff
+}
+.app-body{
+  background-color: #ffffff;
+  margin-top: 40px;
+}
+.app-header{
+  background-color: #ffffff87;
+  color: #3505c5;
+  border-bottom: 0px;
+  box-shadow: inset 0px 20px 18px 19px #fffffff2;
+}
+.navbar-nav .nav-link {
+    color: #170131;
+}
+
+.sidebar {
+  color: #170131;
+  background: #ffffff;
+  
+}
+
+.sidebar .nav-link{
+  color: #170131;
+}
+
+.sidebar .nav-link.active{
+  color: #014ff7;
+  background: #0026fc2a;
+  font-weight: 1000;
+  border-radius: 0px 5px 5px 0px;
+  border-style: solid;
+  border-width: 0px 5px 0px 0px;
+}
+
+.sidebar .nav-dropdown.open .nav-link{
+  color: #0e0e0e;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.sidebar .nav-link:hover {
+    color: #014ff7;
+  background: #0026fc2a;
+  font-weight: 1000;
+  border-radius: 0px 5px 5px 0px;
+}
+</style>
