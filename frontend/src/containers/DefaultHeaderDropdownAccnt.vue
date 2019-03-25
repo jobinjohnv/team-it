@@ -1,7 +1,7 @@
 <template>
   <AppHeaderDropdown right no-caret>
     <template slot="header">
-        <button data-v-411e79bf="" type="button" class="btn btn-pill btn-primary btn-lg">{{user.firstName.charAt(0)}}</button>
+        <button data-v-411e79bf="" type="button" class="btn btn-outline-dark btn-sm btn-pill">{{user.firstName.charAt(0)}}</button>
     </template>
     <template slot="dropdown">
      
@@ -54,7 +54,7 @@ export default {
     axios
       .get('./api/v1/userinfo')
       .then(response => (this.user = response.data))
-      .then(console.log(this.user))
+      .then(console.log(this.user.name))
       .catch(function(error){
         console.log(error);
       })

@@ -10,13 +10,9 @@ export default {
       }
     },
     {
-      title: true,
-      name: 'Theme',
-      class: '',
-      wrapper: {
-        element: '',
-        attributes: {}
-      }
+      name: 'Projects',
+      url: '/projects',
+      icon: 'icon-drop'
     },
     {
       name: 'Colors',
@@ -27,15 +23,6 @@ export default {
       name: 'Typography',
       url: '/theme/typography',
       icon: 'icon-pencil'
-    },
-    {
-      title: true,
-      name: 'Components',
-      class: '',
-      wrapper: {
-        element: '',
-        attributes: {}
-      }
     },
     {
       name: 'Base',
@@ -150,11 +137,6 @@ export default {
           icon: 'icon-cursor'
         }
       ]
-    },
-    {
-      name: 'Charts',
-      url: '/charts',
-      icon: 'icon-pie-chart'
     },
     {
       name: 'Icons',

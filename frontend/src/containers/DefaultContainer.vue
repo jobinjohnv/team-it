@@ -38,7 +38,9 @@
       <main class="main">
         <Breadcrumb :list="list"/>
         <div class="container-fluid">
-          <router-view></router-view>
+          
+            <router-view/>
+    
         </div>
       </main>
       <AppAside fixed>
@@ -155,4 +157,5 @@ export default {
   font-weight: 1000;
   border-radius: 0px 5px 5px 0px;
 }
+
 </style>

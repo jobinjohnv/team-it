@@ -10,11 +10,14 @@ import App from './App'
 import router from './router'
 import Vuesax from 'vuesax'
 import 'vuesax/dist/vuesax.css'
+import VueResource from 'vue-resource'
+
 
 // todo
 // cssVars()
 Vue.use(Vuesax)
 Vue.use(BootstrapVue)
+Vue.use(VueResource);
 
 /* eslint-disable no-new */
 new Vue({

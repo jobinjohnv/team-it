@@ -26,6 +26,8 @@ export default {
 
   @import '~vuesax/dist/vuesax.css';
 
+  @import url('https://cdn.jsdelivr.net/npm/animate.css@3.5.1');
+
   @import url('https://fonts.googleapis.com/css?family=Montserrat');
   
 #app {
