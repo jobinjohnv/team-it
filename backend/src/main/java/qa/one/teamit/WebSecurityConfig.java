@@ -34,19 +34,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception{
 		http
 		.csrf()
-		.disable()
+		.disable();
 		//.authorizeRequests()
 			//.antMatchers("/resources/**", "/registration","/api/v1/userlogin","/api/v1/register","/login*",
 					//"/css/**","/fonts/**","/images/**","/js/*","/vendor/**","/swagger**")
 			//.permitAll()
 			//.anyRequest().authenticated()
 			//.and()
-		.formLogin()  // This part is commented out or else the page will be navigated to login page if not authenticated
-			.loginPage("/login")
-			.permitAll()
-			.and()
-		.logout()
-		.permitAll();
+		//.formLogin()  // This part is commented out or else the page will be navigated to login page if not authenticated
+			//.loginPage("/login")
+			//.permitAll()
+			//.and()
+		//.logout()
+		//.permitAll();
 	}
 	
 	@Bean
