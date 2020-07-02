@@ -38,9 +38,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		//.authorizeRequests()
 			//.antMatchers("/resources/**", "/registration","/api/v1/userlogin","/api/v1/register","/login*",
 					//"/css/**","/fonts/**","/images/**","/js/*","/vendor/**","/swagger**")
-			.permitAll()
-			.anyRequest().authenticated()
-			.and()
+			//.permitAll()
+			//.anyRequest().authenticated()
+			//.and()
 		.formLogin()  // This part is commented out or else the page will be navigated to login page if not authenticated
 			.loginPage("/login")
 			.permitAll()
